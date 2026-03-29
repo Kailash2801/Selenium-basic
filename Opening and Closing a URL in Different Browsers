@@ -1,15 +1,22 @@
 package introduction_1;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 
 public class seleniumintroduction {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		WebDriver driver =  new ChromeDriver();
-		driver.get("https://www.google.com/");
+		WebDriver driver =  new EdgeDriver();
+		driver.get("https://www.youtube.com/");
+		WebDriver driver1 =  new ChromeDriver();
+		driver1.get("https://www.google.com");
 		driver.close();
+		driver1.close();
+	
+		
 
 	}
 
 }
+
