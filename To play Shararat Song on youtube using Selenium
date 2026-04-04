@@ -1,19 +1,27 @@
 package introduction_1;
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Locator {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
 		WebDriver driver = new ChromeDriver();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(6));
 		driver.get("https://www.youtube.com/");
 		driver.findElement(By.name("search_query")).sendKeys("Shararat song");
 		driver.findElement(By.className("ytSearchboxComponentSearchButton")).click();
+		driver.findElement(By.className("ytCoreImageHost")).click();
+		Thread.sleep(1000);//
+		driver.findElement(By.cssSelector("button.ytp-skip-ad-button")).click();
+		
 		
 
 	}
 
 }
+
